@@ -1,0 +1,208 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: century-gothic, sans-serif;
+  color: rgb(56, 56, 65);
+  letter-spacing: 1.5px;
+}
+
+body{
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 69.2px 1fr 50px;
+}
+
+header h1{
+  text-align: center;
+  padding: 15px;
+  font-weight: 800;
+  font-size: 2em;
+}
+
+section{
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  width: 100%;
+  padding: 20px;
+}
+section .game .tries > div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+section .game .tries > div p{
+  font-weight: bolder;
+  font-size: 1.5em;
+
+}
+section .game .tries > div input{
+  max-width: 50px;
+  min-height: 50px;
+  border: none;
+  border-bottom: 3px solid rgb(56, 56, 65);
+  font-size: 2.5em;
+  text-align: center;
+  font-weight: 800;
+  background-color: white;
+  &:focus{
+    outline-color: rgba(56, 56, 65, 20%);
+  }
+}
+section .buttons{
+  display: flex;
+  justify-content: right;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+section .buttons button{
+  padding: 10px;
+  color: white;
+  font-weight: 800;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: 0.5s;
+  min-width: fit-content;
+}
+section .buttons button:hover{
+  cursor: pointer;
+  filter:brightness(90%);
+}
+section .buttons .check{
+  background-color: #ee4628;
+  width: fit-content;
+  flex: 1;
+}
+section .buttons .hint{
+  background-color: #0aa685;
+  padding: 0 20px;
+}
+section .buttons .dont-know{
+  width: 100%;
+  border: 3px rgb(225, 0, 0) solid;
+  color: rgb(225, 0, 0);
+  &:hover{
+    background-color: rgb(255, 0, 0, 10%);
+    border-color: transparent;
+    /* color: white; */
+  }
+}
+section .rules h3{
+  font-weight: 800;
+  font-size: 1.5em;
+  text-align: center;
+}
+section .rules p{
+  position: relative;
+  background-color: #fff;
+  margin: 10px 0 10px 0;
+  padding: 15px 15px 15px 45px;
+  border-radius: 10px;
+  font-weight: 800;
+}
+section .rules p::before{
+  content: "";
+  position: absolute;
+  min-width: 20px;
+  min-height: 20px;
+  border-radius: 50%;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+section .rules p.green::before{
+  background-color: #0aa685;
+}
+section .rules p.orange::before{
+  background-color: #ee4628;
+}
+section .rules p.black::before{
+  background-color: rgb(56, 56, 65);
+}
+section .rules p.hintCount svg{
+  position: absolute;
+  max-width: 23px;
+  max-height: 23px;
+  fill: rgb(56, 56, 65);
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+section .rules p.hintCount{
+  background-color: #ccf2ea;
+  border: 2px solid #0aa685;
+}
+.rules div.result{
+  text-align: center;
+  background-color: white;
+  margin: 10px 0 10px 0;
+  padding: 15px;
+  border-radius: 10px;
+  font-weight: 800;
+  display: none;
+}
+.rules div.result span{
+  display: block;
+  font-size: 1.5em;
+  color: #0aa685;
+  margin-top: 5px;
+  font-weight: 800;
+}
+.again{
+  text-align: center;
+  background-color: white;
+  margin: 10px 0 10px 0;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 800;
+  display: none;
+  border: 3px solid rgb(56, 56, 65);
+  font-size: 16px;
+  width: 100%;
+  transition: 0.3s;
+  &:hover{
+    background-color: rgb(56, 56, 65, 25%);
+  }
+}
+
+footer p{
+  background-color: rgb(56, 56, 65);
+  color: white;
+  padding: 15px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.disabled-inputs{
+  opacity: 50%;
+  pointer-events: none;
+}
+
+section .game .tries > div input.in-place{
+  background-color: #0aa685;
+  color: white;
+  border-color: #0aa685;
+}
+section .game .tries > div input.not-in-place{
+  background-color: #ee4628;
+  color: white;
+  border-color: #ee4628;
+}
+section .game .tries > div input.wrong{
+  background-color: rgb(56, 56, 65);
+  color: white;
+  border-color: rgb(56, 56, 65);
+}
+
+section .buttons button[disabled]{
+  background-color: #888;
+  border-color: #888;
+  color: white;
+  pointer-events: none;
+}
